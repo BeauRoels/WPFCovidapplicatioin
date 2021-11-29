@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfCovidApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCovidApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="622" Width="1034">
+    <Grid>
+        <Label Content="INVULFORMULIER" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Background="#FF65C13A" Width="412" FontWeight="Bold"/>
+        <Label Content="Rijksregisternummer" HorizontalAlignment="Left" Margin="12,31,0,0" VerticalAlignment="Top"/>
+        <Label Content="Naam (voornaam / familienaam)
+               " HorizontalAlignment="Left" Margin="12,67,0,0" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="txtRRN" HorizontalAlignment="Left" Height="23" Margin="209,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFF3F0AE"/>
+        <TextBox x:Name="txtVoornaam" HorizontalAlignment="Left" Height="23" Margin="208,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Background="#FFF3F0AE"/>
+        <TextBox x:Name="txtFamilienaam" HorizontalAlignment="Left" Height="23" Margin="305,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Background="#FFF3F0AE"/>
+        <Label Content="Geboortedatum" HorizontalAlignment="Left" Margin="12,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Geslacht" HorizontalAlignment="Left" Margin="18,139,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpiDatum" HorizontalAlignment="Left" Margin="206,107,0,0" VerticalAlignment="Top" Background="#FFF3F0AE"/>
+        <RadioButton x:Name="rdnVrouw" Content="Vrouw" HorizontalAlignment="Left" Margin="206,147,0,0" VerticalAlignment="Top" GroupName="Geslacht"/>
+        <RadioButton x:Name="rdnMan" Content="Man" HorizontalAlignment="Left" Margin="309,147,0,0" VerticalAlignment="Top" GroupName="Geslacht"/>
+        <Label Content="Adres (straat, huisnummer)" HorizontalAlignment="Left" Margin="13,173,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtStraat" HorizontalAlignment="Left" Height="23" Margin="206,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFF3F0AE"/>
+        <TextBox x:Name="txtHuisnummer" HorizontalAlignment="Left" Height="23" Margin="353,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Background="#FFF3F0AE"/>
+        <Label Content="(postcode, gemeente)" HorizontalAlignment="Left" Margin="56,204,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="23" Margin="209,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Background="#FFF3F0AE"/>
+        <TextBox x:Name="txtGemeente" HorizontalAlignment="Left" Height="23" Margin="280,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Background="#FFF3F0AE"/>
+        <Label Content="Telefoonnummer" HorizontalAlignment="Left" Margin="18,252,0,0" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="txtTelefoonnummer" HorizontalAlignment="Left" Height="23" Margin="209,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFF3F0AE"/>
+        <Label Content="Email Adres" HorizontalAlignment="Left" Margin="22,289,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="209,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Background="#FFF3F0AE"/>
+        <Label Content="Aantal gezinsleden" HorizontalAlignment="Left" Margin="21,325,0,0" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtAantal" HorizontalAlignment="Left" Height="23" Margin="209,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Background="#FFF3F0AE"/>
+        <Label Content="Type Contact" HorizontalAlignment="Left" Margin="26,360,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbxType" HorizontalAlignment="Left" Margin="209,360,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FFF3F0AE" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Gezin" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="Familie" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="Werk" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="School" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="Privé" HorizontalAlignment="Left" Width="117.333333333333"/>
+        </ComboBox>
+        <Label Content="Reeds gecontacteerd?" HorizontalAlignment="Left" Margin="20,388,0,0" VerticalAlignment="Top" Width="153"/>
+        <Button x:Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="446,32,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <Button x:Name="btnChange" Content="Wijzigen" HorizontalAlignment="Left" Margin="602,32,0,0" VerticalAlignment="Top" Width="75" Click="btnChange_Click"/>
+        <Button x:Name="btnRemove" Content="Verwijderen" HorizontalAlignment="Left" Margin="880,32,0,0" VerticalAlignment="Top" Width="75" Click="btnRemove_Click"/>
+        <Button x:Name="btnImport" Content="Lijst Importeren" HorizontalAlignment="Left" Margin="447,391,0,0" VerticalAlignment="Top" Width="100" Click="btnImport_Click" GotFocus="EmptyForm"/>
+        <Button x:Name="btnExport" Content="Lijst Exporteren" HorizontalAlignment="Left" Margin="586,391,0,0" VerticalAlignment="Top" Width="106" Click="btnExport_Click" GotFocus="EmptyForm"/>
+        <Label Content="CONTACTEN" HorizontalAlignment="Left" Margin="446,2,0,0" VerticalAlignment="Top" Width="509" Height="25" Background="#FF65C13A" FontWeight="Bold"/>
+        <Label x:Name="lblHMI" Content="" HorizontalAlignment="Left" Height="26" Margin="447,56,0,0" VerticalAlignment="Top" Width="230" Background="#FFB6E5DE"/>
+        <ListBox x:Name="lbxOutput" HorizontalAlignment="Left" Height="278" Margin="447,107,0,0" VerticalAlignment="Top" Width="508" SelectionChanged="lbxOutput_SelectionChanged" GotFocus="EmptyForm"/>
+        <Button x:Name="btnSave" Content="Opslaan" HorizontalAlignment="Left" Margin="690,33,0,0" VerticalAlignment="Top" Width="64" Click="btnSave_Click"/>
+        <Label x:Name="lblHMI2" Content="" HorizontalAlignment="Left" Margin="691,56,0,0" VerticalAlignment="Top" Width="264" Background="#FFB6E5DE" Height="26"/>
+        <RadioButton x:Name="rdnGecontacteerdJa" Content="Ja" HorizontalAlignment="Left" Margin="208,394,0,0" VerticalAlignment="Top" GroupName="Contact"/>
+        <RadioButton x:Name="rdnGecontacteerdNee" Content="Nee" HorizontalAlignment="Left" Margin="311,394,0,0" VerticalAlignment="Top" GroupName="Contact"/>
+        <TextBox x:Name="txtZoek" HorizontalAlignment="Left" Height="25" Margin="691,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" TextChanged="txtZoek_TextChanged"/>
+        <Button x:Name="btnShowAll" Content="Toon Allen" HorizontalAlignment="Left" Height="25" Margin="522,82,0,0" VerticalAlignment="Top" Width="75" Click="btnShowAll_Click" GotFocus="EmptyForm"/>
+        <Button x:Name="btnClearAll" Content="Wis Allen" HorizontalAlignment="Left" Height="25" Margin="602,82,0,0" VerticalAlignment="Top" Width="75" Click="btnClearAll_Click" GotFocus="EmptyForm"/>
+        <Button x:Name="btnSaveCancel" Content="Annuleer" HorizontalAlignment="Left" Margin="759,33,0,0" VerticalAlignment="Top" Width="64" Click="btnSaveCancel_Click"/>
+
+    </Grid>
+</Window>
